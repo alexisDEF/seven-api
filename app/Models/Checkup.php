@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Checkup extends Model
 {
     use HasFactory;
+
+    public function vehicle(){
+        $this->belongsToMany(Vehicle::class);
+    }
 }

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Capacity extends Model
 {
     use HasFactory;
+
+    public function role(){
+        return $this->belongsToMany(Role::class);
+    }
 }
