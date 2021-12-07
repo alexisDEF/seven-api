@@ -20,24 +20,16 @@ class DatabaseSeeder extends Seeder
         User::create([
             'email'=>'saler01@alizon.fr',
             'password'=>Hash::make('12345678'),
-            'name' => 'Saler 01',
+            'firstName' => 'Saler',
+            'lastName' => '01',
+            'street' => 'teststreet',
+            'postalCode' => '85000',
+            'city' => 'testcity',
+            'tel' => '0601020304',
+            'licenseNumber' => 123456,
+            'role_id' => 1,
         ]);
          \App\Models\User::factory(10)->create();
-
-         $saler = Role::create(['name'=>'saler']);
-         $purchaser = Role::create(['name'=>'purchaser']);
-         $stockEmployee = Role::create(['name'=>'stockEmployee']);
-         $stockManager = Role::create(['name'=>'stockManager']);
-
-         $addStockWithdrawal = Permission::create(['name'=>'addStockWithdrawal']);
-         $addStockEntry = Permission::create(['name'=>'addStockEntry']);
-         $addSupplierOrder = Permission::create(['name'=>'addSupplierOrder']);
-         $addDelivery = Permission::create(['name'=>'addDelivery']);
-
-         $saler->givePermissionTo('addStockWithdrawal');
-         $purchaser->givePermissionTo('addSupplierOrder');
-         $stockEmployee->givePermissionTo('addStockWithdrawal','addStockEntry');
-         $stockManager->givePermissionTo('addStockWithdrawal','addStockEntry','addDelivery');
 
 
     }
