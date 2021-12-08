@@ -13,7 +13,14 @@ class Can extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('can', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('userRoles');
+            $table->unsignedBigInteger('capacity_id');
+            $table->foreign('capacity_id')->references('id')->on('capacities');
+            $table->timestamps();
+        });
     }
 
     /**

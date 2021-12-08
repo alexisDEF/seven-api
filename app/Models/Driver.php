@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Driver extends Model
 {
     use HasFactory;
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function travel()
+    {
+        return $this->hasMany(Travel::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IsControlled extends Migration
+class CreateAgenciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class IsControlled extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('agencies', function (Blueprint $table) {
+            $table->id();
+            $table->string('city');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class IsControlled extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('agencies');
     }
 }

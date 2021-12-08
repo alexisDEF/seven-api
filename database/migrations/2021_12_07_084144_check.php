@@ -13,7 +13,15 @@ class Check extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('check', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('agent_id');
+            $table->foreign('agent_id')->references('id')->on('agents');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->dateTime('date');
+            $table->timestamps();
+        });
     }
 
     /**

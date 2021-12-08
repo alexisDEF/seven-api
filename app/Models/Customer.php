@@ -10,7 +10,7 @@ class Customer extends User
     use HasFactory;
 
     public function reservation(){
-        return $this->belongsToMany(Customer::class);
+        return $this->belongsToMany(Reservation::class);
     }
 
     public function agent(){

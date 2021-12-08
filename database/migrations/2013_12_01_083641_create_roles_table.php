@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Is extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class Is extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('userRoles', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('libelle');
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Is extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('userRoles');
     }
 }

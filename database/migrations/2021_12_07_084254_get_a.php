@@ -13,7 +13,14 @@ class GetA extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('getA', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedBigInteger('reservation_id');
+            $table->foreign('reservation_id')->references('id')->on('reservations');
+            $table->timestamps();
+        });
     }
 
     /**

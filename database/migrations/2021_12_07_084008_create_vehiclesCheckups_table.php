@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCheckupsTable extends Migration
+class CreateVehiclesCheckupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateCheckupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('checkups', function (Blueprint $table) {
+        Schema::create('vehicleCheckups', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('date');
+            $table->Boolean('isReady');
             $table->timestamps();
         });
     }

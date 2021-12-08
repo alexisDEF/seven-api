@@ -14,6 +14,6 @@ class Role extends Model
     }
 
     public function capacity() {
-        $this->belongsToMany(Capacity::class);
+        return $this->belongsToMany(Capacity::class);
     }
 }
