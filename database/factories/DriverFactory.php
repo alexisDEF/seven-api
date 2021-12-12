@@ -22,7 +22,13 @@ class DriverFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=>$this->faker->firstName,
+            'lastname'=>$this->faker->lastName,
+            'postalCode'=>$this->faker->postcode,
+            'city'=>$this->faker->city,
+            'email'=>$this->faker->email,
+            'phoneNumber'=>$this->faker->phoneNumber,
+            'licenceNumber'=>$this->faker->unique()->asciify('***************'),
         ];
     }
 }

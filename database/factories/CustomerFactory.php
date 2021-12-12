@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Agent;
+use App\Models\Company;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,8 +23,11 @@ class CustomerFactory extends Factory
      */
     public function definition()
     {
+        $companies = $this->count(Company::class);
+        $agents = $this->count(Agent::class);
         return [
-            //
+            'company_id'=>$this->faker->numberBetween(1,$companies),
+            'agent_id'=>$this->faker->numberBetween(1,$agents),
         ];
     }
 }

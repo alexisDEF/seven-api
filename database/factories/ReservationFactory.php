@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Reservation;
+use App\Models\Vehicle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReservationFactory extends Factory
@@ -21,8 +22,10 @@ class ReservationFactory extends Factory
      */
     public function definition()
     {
+        $vehicles = $this->count(Vehicle::class);
         return [
-            //
+            'date'=>$this->faker->date('Y-m-d','now'),
+            'vehicle_id'=>$this->faker->numberBetween(1,$vehicles)
         ];
     }
 }

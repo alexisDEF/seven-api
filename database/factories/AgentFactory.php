@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Agency;
 use App\Models\Agent;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AgentFactory extends Factory
@@ -21,8 +23,9 @@ class AgentFactory extends Factory
      */
     public function definition()
     {
+        $agencies = $this->count(Agency::class);
         return [
-            //
+            'agency_id'=>$this->faker->numberBetween(1,$agencies),
         ];
     }
 }

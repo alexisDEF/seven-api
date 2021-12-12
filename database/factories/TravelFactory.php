@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Agency;
 use App\Models\Travel;
+use App\Models\Vehicle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TravelFactory extends Factory
@@ -21,8 +23,15 @@ class TravelFactory extends Factory
      */
     public function definition()
     {
+        $vehicles = $this->count(Vehicle::class);
+        $drivers = $this->count(Vehicle::class);
+        $agencies = $this->count(Agency::class);
         return [
-            //
+            'startCity'=>$this->faker->city,
+            'endCity'=>$this->faker->city,
+            'vehicle_id'=>$this->faker->numberBetween(1,$vehicles),
+            'driver_id'=>$this->faker->numberBetween(1,$drivers),
+            'agency_id'=>$this->faker->numberBetween(1,$agencies)
         ];
     }
 }

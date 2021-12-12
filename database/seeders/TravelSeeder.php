@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TravelSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class TravelSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('travel')->insert([
+            'type'=> 'aller_simple', 'aller_retour'
+        ]);
     }
 }

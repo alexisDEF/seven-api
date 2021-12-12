@@ -22,7 +22,7 @@ class CapacityFactory extends Factory
     public function definition()
     {
         return [
-            //
+
         ];
     }
 }

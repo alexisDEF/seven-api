@@ -22,7 +22,7 @@ class AgencyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'city'=>$this->faker->city,
         ];
     }
 }

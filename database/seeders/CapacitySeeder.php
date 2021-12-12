@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CapacitySeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class CapacitySeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('capacities')->insert([
+            'libelle'=> ['viewTravel','viewCompany','viewVehicle']
+        ]);
     }
 }

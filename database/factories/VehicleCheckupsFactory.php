@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Checkup;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CheckupFactory extends Factory
+class VehicleCheckupsFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -22,7 +22,8 @@ class CheckupFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'date'=>$this->faker->date('Y-m-d', 'now'),
+            'isReady'=>$this->faker->boolean,
         ];
     }
 }
