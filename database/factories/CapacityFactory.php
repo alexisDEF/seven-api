@@ -22,6 +22,7 @@ class CapacityFactory extends Factory
     public function definition()
     {
         return [
+            'libelle'=>$this->faker->name(),
 
         ];
     }

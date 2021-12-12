@@ -22,10 +22,10 @@ class ReservationFactory extends Factory
      */
     public function definition()
     {
-        $vehicles = $this->count(Vehicle::class);
+      //  $vehicles = $this->count(Vehicle::class);
         return [
             'date'=>$this->faker->date('Y-m-d','now'),
-            'vehicle_id'=>$this->faker->numberBetween(1,$vehicles)
+            'vehicle_id'=>$this->faker->numberBetween(1,10)
         ];
     }
 }

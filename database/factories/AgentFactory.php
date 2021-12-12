@@ -23,9 +23,9 @@ class AgentFactory extends Factory
      */
     public function definition()
     {
-        $agencies = $this->count(Agency::class);
+      //  $agencies = $this->count(Agency::class);
         return [
-            'agency_id'=>$this->faker->numberBetween(1,$agencies),
+            'agency_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

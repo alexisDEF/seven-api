@@ -16,9 +16,9 @@ class AgentVehicle extends Migration
         Schema::create('agent_vehicle', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('agent_id');
-            $table->foreign('agent_id')->references('id')->on('agent');
+            $table->foreign('agent_id')->references('id')->on('agents');
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->dateTime('date');
             $table->timestamps();
         });

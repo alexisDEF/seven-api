@@ -13,10 +13,10 @@ class CreateAgentTable extends Migration
      */
     public function up()
     {
-        Schema::create('agent', function (Blueprint $table) {
+        Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('agency_id');
-            $table->foreign('agency_id')->references('id')->on('agency');
+            $table->foreign('agency_id')->references('id')->on('agencies');
             $table->timestamps();
         });
     }

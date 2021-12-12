@@ -16,9 +16,9 @@ class VehicleVehicleModel extends Migration
         Schema::create('vehicle_vehicleModel', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->unsignedBigInteger('vehicleModel_id');
-            $table->foreign('vehicleModel_id')->references('id')->on('vehicleModel');
+            $table->foreign('vehicleModel_id')->references('id')->on('vehicle_models');
             $table->timestamps();
         });
     }

@@ -23,11 +23,11 @@ class CustomerFactory extends Factory
      */
     public function definition()
     {
-        $companies = $this->count(Company::class);
-        $agents = $this->count(Agent::class);
+//        $companies = $this->count(Company::class);
+  //      $agents = $this->count(Agent::class);
         return [
-            'company_id'=>$this->faker->numberBetween(1,$companies),
-            'agent_id'=>$this->faker->numberBetween(1,$agents),
+            'company_id'=>$this->faker->numberBetween(1,10),
+            'agent_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

@@ -16,7 +16,7 @@ class CheckupVehicleVehicle extends Migration
         Schema::create('checkupVehicle_vehicle', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->unsignedBigInteger('vehicleCheckup_id');
             $table->foreign('vehicleCheckup_id')->references('id')->on('vehicleCheckup');
             $table->timestamps();

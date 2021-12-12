@@ -14,7 +14,7 @@ class AgencyController extends Controller
      */
     public function index()
     {
-        //
+        return Agency::all();
     }
 
     /**

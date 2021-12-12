@@ -13,7 +13,7 @@ class CreateCapacityTable extends Migration
      */
     public function up()
     {
-        Schema::create('capacity', function (Blueprint $table) {
+        Schema::create('capacities', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
             $table->timestamps();

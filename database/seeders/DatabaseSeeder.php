@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Role::factory(10)->create();
+       // \App\Models\Role::factory(10)->create();
         User::create([
             'email'=>'saler01@alizon.fr',
             'password'=>Hash::make('12345678'),
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'city' => 'testcity',
             'tel' => '0601020304',
             'licenseNumber' => 123456,
-            'role_id' => 1,
+         //   'role_id' => null,
         ]);
          \App\Models\User::factory(10)->create();
          Agency::factory(10)->create();
@@ -48,9 +48,10 @@ class DatabaseSeeder extends Seeder
          Customer::factory(10)->create();
          Driver::factory(10)->create();
          Request::factory(10)->create();
-         Reservation::factory(10)->create();
-         Vehicle::factory(10)->create();
-         VehicleModel::factory(10)->create();
+        Vehicle::factory(10)->create();
+        VehicleModel::factory(10)->create();
+
+        Reservation::factory(10)->create();
 
 
     }

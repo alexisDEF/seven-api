@@ -28,7 +28,8 @@ class DriverFactory extends Factory
             'city'=>$this->faker->city,
             'email'=>$this->faker->email,
             'phoneNumber'=>$this->faker->phoneNumber,
-            'licenceNumber'=>$this->faker->unique()->asciify('***************'),
+            'driverLicence'=>$this->faker->unique()->asciify('***************'),
+            'company_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

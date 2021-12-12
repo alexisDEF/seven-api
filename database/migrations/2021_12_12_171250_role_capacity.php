@@ -18,7 +18,7 @@ class RoleCapacity extends Migration
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('userRole');
             $table->unsignedBigInteger('capacity_id');
-            $table->foreign('capacity_id')->references('id')->on('capacity');
+            $table->foreign('capacity_id')->references('id')->on('capacities');
             $table->timestamps();
         });
     }

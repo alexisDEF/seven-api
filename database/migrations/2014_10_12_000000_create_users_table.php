@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->string('tel');
             $table->string('licenseNumber')->unique();
-            $table->unsignedBigInteger('role_id');
-            $table->foreign('role_id')->references('id')->on('userRole');
+         //   $table->unsignedBigInteger('role_id');
+         //   $table->foreign('role_id')->references('id')->on('userRole');
             $table->rememberToken();
             $table->timestamps();
         });

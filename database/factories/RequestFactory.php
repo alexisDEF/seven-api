@@ -22,9 +22,9 @@ class RequestFactory extends Factory
      */
     public function definition()
     {
-        $customers = $this->count(Customer::class);
+       // $customers = $this->count(Customer::class);
         return [
-            'customer_id'=>$this->faker->numberBetween(1,$customers)
+            'customer_id'=>$this->faker->numberBetween(1,10)
         ];
     }
 }

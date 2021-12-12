@@ -19,6 +19,10 @@ Route::post('login', [\App\Http\Controllers\API\UserController::class,'login']);
 Route::post('register', [\App\Http\Controllers\API\UserController::class,'register']);
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('getRegisteredUser', 'API\UserController@getRegisteredUser');
+
+
 });
+
+Route::get('agency', [\App\Http\Controllers\AgencyController::class,'index']);
 
 Route::get('user',[\App\Http\Controllers\API\UserController::class,'index']);
