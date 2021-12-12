@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Check extends Migration
+class CreateReservationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class Check extends Migration
      */
     public function up()
     {
-        Schema::create('check', function (Blueprint $table) {
+        Schema::create('reservation', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('agent_id');
-            $table->foreign('agent_id')->references('id')->on('agents');
-            $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->dateTime('date');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicle');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class Check extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('reservation');
     }
 }

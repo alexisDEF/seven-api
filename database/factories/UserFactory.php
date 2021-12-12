@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,6 +24,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $roles = $this->count(Role::class);
         return [
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => Carbon::now(),
@@ -35,7 +37,7 @@ class UserFactory extends Factory
             'city' => $this->faker->city(),
             'tel' => $this->faker->phoneNumber(),
             'licenseNumber' => $this->faker->unique()->numberBetween(10000,99999),
-            'role_id' => $this->faker->numberBetween(1,5),
+            'role_id' => $this->faker->numberBetween(0,$roles),
             ];
     }
 

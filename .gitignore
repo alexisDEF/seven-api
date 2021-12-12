@@ -15,3 +15,9 @@ storage/*.key
 Homestead.yaml
 Homestead.json
 /.vagrant
+
+#un composer require qui n'a pas fonctionné
+.idea/php.xml
+.idea/sp1-api.iml
+composer.json
+composer.lock

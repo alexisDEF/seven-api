@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class VehicleSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class VehicleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('vehicles')->insert([
+            'status'=>'Bon etat', 'Mauvais etat',
+        ]);
     }
 }

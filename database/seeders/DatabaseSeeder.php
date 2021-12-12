@@ -2,7 +2,17 @@
 
 namespace Database\Seeders;
 
+use App\Models\Agency;
+use App\Models\Agent;
+use App\Models\Capacity;
+use App\Models\Company;
+use App\Models\Customer;
+use App\Models\Driver;
+use App\Models\Request;
+use App\Models\Reservation;
 use App\Models\User;
+use App\Models\Vehicle;
+use App\Models\VehicleModel;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
@@ -17,6 +27,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\Role::factory(10)->create();
         User::create([
             'email'=>'saler01@alizon.fr',
             'password'=>Hash::make('12345678'),
@@ -30,6 +41,16 @@ class DatabaseSeeder extends Seeder
             'role_id' => 1,
         ]);
          \App\Models\User::factory(10)->create();
+         Agency::factory(10)->create();
+         Agent::factory(10)->create();
+         Capacity::factory(10)->create();
+         Company::factory(10)->create();
+         Customer::factory(10)->create();
+         Driver::factory(10)->create();
+         Request::factory(10)->create();
+         Reservation::factory(10)->create();
+         Vehicle::factory(10)->create();
+         VehicleModel::factory(10)->create();
 
 
     }

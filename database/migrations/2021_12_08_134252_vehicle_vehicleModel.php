@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVehiclesCheckupsTable extends Migration
+class VehicleVehicleModel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateVehiclesCheckupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehicleCheckups', function (Blueprint $table) {
+        Schema::create('vehicle_vehicleModel', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date');
-            $table->Boolean('isReady');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->unsignedBigInteger('vehicleModel_id');
+            $table->foreign('vehicleModel_id')->references('id')->on('vehicleModel');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateVehiclesCheckupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checkups');
+        //
     }
 }

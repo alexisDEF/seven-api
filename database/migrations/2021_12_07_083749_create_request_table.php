@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Can extends Migration
+class CreateRequestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Can extends Migration
      */
     public function up()
     {
-        Schema::create('can', function (Blueprint $table) {
+        Schema::create('request', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('role_id');
-            $table->foreign('role_id')->references('id')->on('userRoles');
-            $table->unsignedBigInteger('capacity_id');
-            $table->foreign('capacity_id')->references('id')->on('capacities');
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customer');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class Can extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('request');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCapacitiesTable extends Migration
+class RoleCapacity extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateCapacitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('capacities', function (Blueprint $table) {
+        Schema::create('role_capacity', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('userRole');
+            $table->unsignedBigInteger('capacity_id');
+            $table->foreign('capacity_id')->references('id')->on('capacity');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateCapacitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('capacities');
+        //
     }
 }

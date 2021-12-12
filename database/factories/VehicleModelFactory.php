@@ -22,7 +22,8 @@ class VehicleModelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=>$this->faker->word,
+            'bookingNb'=>$this->faker->numberBetween(1,100)
         ];
     }
 }

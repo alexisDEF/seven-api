@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IsControlled extends Migration
+class CreateAgentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class IsControlled extends Migration
      */
     public function up()
     {
-        Schema::create('isControlled', function (Blueprint $table) {
+        Schema::create('agent', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
-            $table->unsignedBigInteger('vehicleCheckup_id');
-            $table->foreign('vehicleCheckup_id')->references('id')->on('vehicleCheckups');
+            $table->unsignedBigInteger('agency_id');
+            $table->foreign('agency_id')->references('id')->on('agency');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class IsControlled extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('agent');
     }
 }

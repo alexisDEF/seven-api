@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservationsTable extends Migration
+class CheckupVehicleVehicle extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('checkupVehicle_vehicle', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date');
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->unsignedBigInteger('vehicleCheckup_id');
+            $table->foreign('vehicleCheckup_id')->references('id')->on('vehicleCheckup');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateReservationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservations');
+        //
     }
 }

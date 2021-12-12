@@ -23,6 +23,8 @@ class AgencyFactory extends Factory
     {
         return [
             'city'=>$this->faker->city,
+            'postCode'=>$this->faker->postcode,
+            'address'=>$this->faker->address,
         ];
     }
 }

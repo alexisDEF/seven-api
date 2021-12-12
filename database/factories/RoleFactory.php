@@ -23,11 +23,8 @@ class RoleFactory extends Factory
      */
     public function definition()
     {
-        $users=$this->count(User::class);
-        $capacities = $this->count(Capacity::class);
-        return [
-            'user_id'=>$this->faker->numberBetween(1,$users),
-            'capacity_id'=>$this->faker->numberBetween(1,$capacities),
+        return[
+            'name'=>'AddTravel'
         ];
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class GetA extends Migration
+class CreateAgencyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class GetA extends Migration
      */
     public function up()
     {
-        Schema::create('getA', function (Blueprint $table) {
+        Schema::create('agency', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers');
-            $table->unsignedBigInteger('reservation_id');
-            $table->foreign('reservation_id')->references('id')->on('reservations');
+            $table->string('city');
+            $table->string('postCode');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class GetA extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('agency');
     }
 }
