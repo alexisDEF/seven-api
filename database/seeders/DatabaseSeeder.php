@@ -47,7 +47,6 @@ class DatabaseSeeder extends Seeder
          Company::factory(10)->create();
          Customer::factory(10)->create();
          Driver::factory(10)->create();
-         Request::factory(10)->create();
         Vehicle::factory(10)->create();
         VehicleModel::factory(10)->create();
 
