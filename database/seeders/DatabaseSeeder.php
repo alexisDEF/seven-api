@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'licenseNumber' => 123456,
          //   'role_id' => null,
         ]);
-         \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(30)->create();
          Agency::factory(10)->create();
          Agent::factory(10)->create();
          Capacity::factory(10)->create();

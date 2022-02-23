@@ -17,6 +17,9 @@ class CreateAgentTable extends Migration
             $table->id();
             $table->unsignedBigInteger('agency_id');
             $table->foreign('agency_id')->references('id')->on('agencies');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
