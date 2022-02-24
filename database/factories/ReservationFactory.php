@@ -24,7 +24,9 @@ class ReservationFactory extends Factory
     {
       //  $vehicles = $this->count(Vehicle::class);
         return [
-            'date'=>$this->faker->date('Y-m-d','now'),
+            'startDate'=>$this->faker->date('Y-m-d','now'),
+            'endDate'=>$this->faker->date('Y-m-d','now'),
+
             'startCity'=>$this->faker->city,
             'endCity'=>$this->faker->city,
             'vehicle_id'=>$this->faker->numberBetween(1,10),

@@ -14,8 +14,8 @@ class Agency extends Model
         return $this->hasMany(Agent::class);
     }
 
-    public function travel()
+    public function reservation()
     {
-        return $this->hasMany(Travel::class);
+        return $this->hasMany(Reservation::class);
     }
 }
