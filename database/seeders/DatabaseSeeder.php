@@ -8,7 +8,6 @@ use App\Models\Capacity;
 use App\Models\Company;
 use App\Models\Customer;
 use App\Models\Driver;
-use App\Models\Request;
 use App\Models\Reservation;
 use App\Models\User;
 use App\Models\Vehicle;

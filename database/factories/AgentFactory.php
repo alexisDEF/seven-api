@@ -26,7 +26,7 @@ class AgentFactory extends Factory
       //  $agencies = $this->count(Agency::class);
         return [
             'agency_id'=>$this->faker->numberBetween(1,10),
-            'user_id'=>$this->faker->numberBetween(16,30),
+            'user_id'=>$this->faker->unique->numberBetween(16,30),
         ];
     }
 }
