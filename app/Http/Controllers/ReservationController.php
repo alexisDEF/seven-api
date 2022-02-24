@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agent;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,16 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Good';
+        return Reservation::create([
+            'startDate'=>'2022-02-03 00:00:00',
+            'endDate'=>'2022-02-03 00:00:00',
+            'startCity'=>1,
+            'endCity'=>1,
+            'customer_id'=>1,
+            'agency_id'=>1,
+            'vehicle_id'=>1,
+            'driver_id'=>1,
+        ]);
     }
 
     /**

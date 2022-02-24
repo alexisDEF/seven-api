@@ -23,7 +23,7 @@ Route::prefix('v1')->group(function() {
         Route::post('getRegisteredUser', 'API\UserController@getRegisteredUser');
     });
 
-    Route::post('storeReservation',[\App\Http\Controllers\ReservationController::class,'store']);
+    Route::post('storereservation',[\App\Http\Controllers\ReservationController::class, 'store']);
 
     Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
 
