@@ -16,18 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function() {
 
+    Route::post('login', [\App\Http\Controllers\API\UserController::class, 'login'])->name('login');
+    Route::post('register', [\App\Http\Controllers\API\UserController::class, 'register'])->name('register');
 
-    Route::post('login', [\App\Http\Controllers\API\UserController::class, 'login']);
-    Route::post('register', [\App\Http\Controllers\API\UserController::class, 'register']);
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('getRegisteredUser', 'API\UserController@getRegisteredUser');
+        Route::post('storereservation',[\App\Http\Controllers\ReservationController::class, 'store']);
+        Route::get('drivers',[\App\Http\Controllers\DriverController::class,'index']);
+        Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
+        Route::get('vehicles', [\App\Http\Controllers\VehicleController::class, 'index']);
+        Route::get('user', [\App\Http\Controllers\API\UserController::class, 'index']);
     });
 
-    Route::post('storereservation',[\App\Http\Controllers\ReservationController::class, 'store']);
 
-    Route::get('drivers',[\App\Http\Controllers\DriverController::class,'index']);
-    Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
-    Route::get('vehicles', [\App\Http\Controllers\VehicleController::class, 'index']);
-    Route::get('user', [\App\Http\Controllers\API\UserController::class, 'index']);
 
 });

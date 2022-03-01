@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Agent;
+use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 //use App\User;
@@ -15,13 +17,27 @@ class UserController extends Controller
     /**
      * login api
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function login(){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
-            return response()->json(['success' => $success], $this->successStatus);
+
+
+            switch($user->typeUser){
+                case 'agent':
+                    $user->typeUser = Agent::where('user_id',$user->id)->first();
+                    break;
+                case 'customer':
+                    $user->typeUser = Customer::where('user_id',$user->id)->first();
+                    break;
+                default:
+                    $user = null;
+                    break;
+            }
+
+            return response()->json(['success' => $success,'user'=>$user], $this->successStatus);
         }
         else{
             return response()->json(['error'=>'Unauthorised'], 401);

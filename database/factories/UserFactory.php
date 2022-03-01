@@ -26,6 +26,12 @@ class UserFactory extends Factory
     public function definition()
     {
 //        $roles = $this->count(Role::class);
+        if(random_int(0,1) == 1){
+            $userType = 'agent';
+        }else{
+            $userType = 'customer';
+        }
+
         return [
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => Carbon::now(),
@@ -38,6 +44,7 @@ class UserFactory extends Factory
             'city' => $this->faker->city(),
             'tel' => $this->faker->phoneNumber(),
             'licenseNumber' => $this->faker->unique()->numberBetween(10000,99999),
+            'typeUser' => $userType,
            // 'role_id' => $this->faker->numberBetween(0,$roles),
             ];
     }

@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             'city' => 'testcity',
             'tel' => '0601020304',
             'licenseNumber' => 123456,
+            'typeUser' => 'agent',
          //   'role_id' => null,
         ]);
          \App\Models\User::factory(30)->create();

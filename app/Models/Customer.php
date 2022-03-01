@@ -16,4 +16,8 @@ class Customer extends User
     public function agent(){
         return $this->belongsTo(Agent::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
