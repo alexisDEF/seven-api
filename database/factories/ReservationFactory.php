@@ -22,11 +22,11 @@ class ReservationFactory extends Factory
      */
     public function definition()
     {
+        $startDate = $this->faker->dateTimeBetween('-5 months','now');
       //  $vehicles = $this->count(Vehicle::class);
         return [
-            'startDate'=>$this->faker->date('Y-m-d','now'),
-            'endDate'=>$this->faker->date('Y-m-d','now'),
-
+            'startDate'=>$startDate,
+            'endDate'=>$this->faker->dateTimeBetween($startDate,'+30 days'),
             'startCity'=>$this->faker->city,
             'endCity'=>$this->faker->city,
             'vehicle_id'=>$this->faker->numberBetween(1,10),

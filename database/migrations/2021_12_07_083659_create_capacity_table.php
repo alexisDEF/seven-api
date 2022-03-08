@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCapacityTable extends Migration
 {
-    /**
+    /**e,
      * Run the migrations.
      *
      * @return void
@@ -16,7 +16,6 @@ class CreateCapacityTable extends Migration
         Schema::create('capacities', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->timestamps();
         });
     }
 

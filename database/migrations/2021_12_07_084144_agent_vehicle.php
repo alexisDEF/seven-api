@@ -20,7 +20,6 @@ class AgentVehicle extends Migration
             $table->unsignedBigInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->dateTime('date');
-            $table->timestamps();
         });
     }
 

@@ -37,8 +37,8 @@ class UserFactory extends Factory
             'email_verified_at' => Carbon::now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'firstName' => $this->faker->firstName(),
-            'lastName' => $this->faker->lastName(),
+            'firstname' => $this->faker->firstName(),
+            'lastname' => $this->faker->lastName(),
             'street' => $this->faker->streetAddress(),
             'postalCode' => $this->faker->postcode(),
             'city' => $this->faker->city(),
