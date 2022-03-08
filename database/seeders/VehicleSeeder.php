@@ -14,8 +14,6 @@ class VehicleSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('vehicles')->insert([
-            'status'=>'Bon etat', 'Mauvais etat',
-        ]);
+
     }
 }

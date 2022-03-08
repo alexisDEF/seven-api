@@ -18,11 +18,8 @@ class CreateVehicleTable extends Migration
             $table->string('licencePlate');
             $table->string('status');
             $table->float('mileage');
-            $table->boolean('hasToBePrepared');
-            $table->boolean('hasToBeReturned');
-            $table->boolean('isMaintenance');
-            $table->boolean('onSale');
-            $table->timestamps();
+            //$table->unsignedBigInteger('vehicleModel_id');
+            //$table->foreign('vehicleModel_id')->references('id')->on('vehicleModels');
         });
     }
 
@@ -33,6 +30,6 @@ class CreateVehicleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle');
+        Schema::dropIfExists('vehicles');
     }
 }

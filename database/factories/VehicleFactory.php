@@ -25,10 +25,6 @@ class VehicleFactory extends Factory
             'licencePlate'=>$this->faker->asciify('*******'),
             'status'=>'null',
             'mileage'=>$this->faker->randomFloat(2,1,350000),
-            'hasToBePrepared'=>$this->faker->boolean,
-            'hasToBeReturned'=>$this->faker->boolean,
-            'isMaintenance'=>$this->faker->boolean,
-            'onSale'=>$this->faker->boolean,
         ];
     }
 }
