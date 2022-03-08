@@ -55,9 +55,13 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show($id)
     {
-        //
+        $reservation = Reservation::where('id',$id)->first();
+        $reservation->customer_id = $reservation->customer;
+        $reservation->vehicle_id = $reservation->vehicle;
+        $reservation->driver_id = $reservation->driver;
+        return $reservation;
     }
 
     /**
@@ -96,12 +100,13 @@ class ReservationController extends Controller
 
     public function getReservationsWithCustomerId($customerId){
 
-        $reservation = Reservation::where('customer_id',$customerId)->first();
+        $reservations = Reservation::where('customer_id',$customerId)->get();
 
-        $reservation->customer_id = $reservation->customer;
-        $reservation->vehicle_id = $reservation->vehicle;
-        $reservation->driver_id = $reservation->driver;
-
-        return $reservation;
+        foreach($reservations as $reservation){
+            $reservation->customer_id = $reservation->customer;
+            $reservation->vehicle_id = $reservation->vehicle;
+            $reservation->driver_id = $reservation->driver;
+        }
+        return $reservations;
     }
 }
