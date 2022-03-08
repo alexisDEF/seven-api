@@ -23,7 +23,7 @@ class VehicleFactory extends Factory
     {
         return [
             'licencePlate'=>$this->faker->asciify('*******'),
-            'status'=>'null',
+            'status_id'=>$this->faker->numberBetween(1,3),
             'mileage'=>$this->faker->randomFloat(2,1,350000),
         ];
     }

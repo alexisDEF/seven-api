@@ -22,15 +22,8 @@ class DamageTypeFactory extends Factory
      */
     public function definition()
     {
-//        $result []
-//        $damages = ['Rayure superficielle','Rayure profonde','Enfoncement/choc'];
-//        for($c = 0; $c < count($damages); $c++ )
-//        {
-//            $result  = $damages[$c];
-//        }
-//        return
-//        [
-//
-//        ]
+        return[
+            //
+        ];
     }
 }

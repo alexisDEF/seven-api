@@ -16,8 +16,9 @@ class CreateVehicleTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('licencePlate');
-            $table->string('status');
             $table->float('mileage');
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('vehicle_statuses');
             //$table->unsignedBigInteger('vehicleModel_id');
             //$table->foreign('vehicleModel_id')->references('id')->on('vehicleModels');
         });

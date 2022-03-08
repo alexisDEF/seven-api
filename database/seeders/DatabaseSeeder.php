@@ -60,14 +60,19 @@ class DatabaseSeeder extends Seeder
             'typeUser' => 'customer',
             //   'role_id' => null,
         ]);
+
         VehicleModel::create([
             'brand'=>'Renault',
             'model'=>'Clio 3',
             'vehiclesAvailable'=>50,
             'vehiclesUnavailable'=>100,
         ]);
+
         //VehicleCheckSeeder::class;
-        //VehicleStatusSeeder::class;
+        $this->call(VehicleStatusSeeder::class);
+        $this->call(DamageTypeSeeder::class);
+        $this->call(VehiclePartSeeder::class);
+
 
          \App\Models\User::factory(30)->create();
          Agency::factory(10)->create();
@@ -76,9 +81,6 @@ class DatabaseSeeder extends Seeder
          Company::factory(10)->create();
          Customer::factory(10)->create();
          Driver::factory(10)->create();
-         //VehicleStatus::factory(10)->create();
-         //VehiclePart::factory(10)->create();
-         //DamageType::factory(1)->create();
          VehicleCheck::factory(10)->create();
         VehicleModel::factory(1)->create();
         Vehicle::factory(10)->create();
