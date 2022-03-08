@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
          Driver::factory(10)->create();
          //VehicleStatus::factory(10)->create();
          //VehiclePart::factory(10)->create();
-         //DamageType::factory(10)->create();
+         //DamageType::factory(1)->create();
          VehicleCheck::factory(10)->create();
         VehicleModel::factory(1)->create();
         Vehicle::factory(10)->create();
