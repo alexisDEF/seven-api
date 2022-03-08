@@ -40,6 +40,21 @@ class DatabaseSeeder extends Seeder
             'typeUser' => 'agent',
          //   'role_id' => null,
         ]);
+
+
+        User::create([
+            'email'=>'customer@gmail.com',
+            'password'=>Hash::make('12345678'),
+            'firstName' => 'Customer',
+            'lastName' => '01',
+            'street' => 'street',
+            'postalCode' => '85000',
+            'city' => 'Paris',
+            'tel' => '0601020304',
+            'licenseNumber' => 123457,
+            'typeUser' => 'customer',
+            //   'role_id' => null,
+        ]);
          \App\Models\User::factory(30)->create();
          Agency::factory(10)->create();
          Agent::factory(10)->create();

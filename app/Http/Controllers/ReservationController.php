@@ -48,6 +48,7 @@ class ReservationController extends Controller
         ]);
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -91,5 +92,16 @@ class ReservationController extends Controller
     public function destroy(Reservation $reservation)
     {
         //
+    }
+
+    public function getReservationsWithCustomerId($customerId){
+
+        $reservation = Reservation::where('customer_id',$customerId)->first();
+
+        $reservation->customer_id = $reservation->customer;
+        $reservation->vehicle_id = $reservation->vehicle;
+        $reservation->driver_id = $reservation->driver;
+
+        return $reservation;
     }
 }

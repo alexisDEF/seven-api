@@ -21,7 +21,12 @@ Route::prefix('v1')->group(function() {
 
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('getRegisteredUser', 'API\UserController@getRegisteredUser');
+
+        Route::get('getReservationsWithCustomerId/{id}',[\App\Http\Controllers\ReservationController::class,'getReservationsWithCustomerId']);
         Route::post('storereservation',[\App\Http\Controllers\ReservationController::class, 'store']);
+
+
+
         Route::get('drivers',[\App\Http\Controllers\DriverController::class,'index']);
         Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
         Route::get('vehicles', [\App\Http\Controllers\VehicleController::class, 'index']);

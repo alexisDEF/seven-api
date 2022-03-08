@@ -14,7 +14,18 @@ class Reservation extends Model
 
     public function customer()
     {
-        return $this->belongsToMany(Customer::class);
+        return $this->belongsTo(Customer::class);
 
     }
+
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
+
+    }
+    public function driver()
+    {
+        return $this->belongsTo(Driver::class);
+    }
+
 }
