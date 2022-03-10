@@ -12,9 +12,9 @@ class DriverController extends Controller
      *
      * @return Driver[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($compagnyId)
     {
-        return Driver::all();
+        return Driver::where('company_id',$compagnyId)->get();
     }
 
     /**

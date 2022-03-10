@@ -57,10 +57,12 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        $reservation = Reservation::where('id',$id)->first();
-        $reservation->customer_id = $reservation->customer;
-        $reservation->vehicle_id = $reservation->vehicle;
-        $reservation->driver_id = $reservation->driver;
+        $reservation = Reservation::where('id',$id)->with('customer','vehicle','driver')->get();
+//
+//        $reservation->customer_id = $reservation->customer;
+//        $reservation->vehicle_id = $reservation->vehicle;
+//        $reservation->driver_id = $reservation->driver;
+
         return $reservation;
     }
 
@@ -100,13 +102,14 @@ class ReservationController extends Controller
 
     public function getReservationsWithCustomerId($customerId){
 
-        $reservations = Reservation::where('customer_id',$customerId)->get();
+        $reservations = Reservation::where('customer_id',$customerId)->with('customer','vehicle','driver')->get();
 
-        foreach($reservations as $reservation){
-            $reservation->customer_id = $reservation->customer;
-            $reservation->vehicle_id = $reservation->vehicle;
-            $reservation->driver_id = $reservation->driver;
-        }
+//        foreach($reservations as $reservation){
+//            $reservation->customer_id = $reservation->customer;
+//            $reservation->vehicle_id = $reservation->vehicle;
+//            $reservation->driver_id = $reservation->driver;
+//        }
+
         return $reservations;
     }
 }

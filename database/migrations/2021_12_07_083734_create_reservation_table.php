@@ -17,12 +17,13 @@ class CreateReservationTable extends Migration
             $table->id();
             $table->dateTime('startDate');
             $table->dateTime('endDate');
-            $table->string('startCity');
-            $table->string('endCity');
+            $table->unsignedBigInteger('startAgency_id');
+            $table->foreign('startAgency_id')->references('id')->on('agencies');
+            $table->unsignedBigInteger('endAgency_id');
+            $table->foreign('endAgency_id')->references('id')->on('agencies');
+            $table->boolean('status');
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
-            $table->unsignedBigInteger('agency_id');
-            $table->foreign('agency_id')->references('id')->on('agencies');
             $table->unsignedBigInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->unsignedBigInteger('driver_id');

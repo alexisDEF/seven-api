@@ -10,7 +10,7 @@ class Reservation extends Model
 
     use HasFactory;
 
-    protected $fillable=['startDate', 'endDate', 'startCity', 'endCity', 'customer_id', 'agency_id', 'vehicle_id', 'driver_id'];
+    protected $fillable=['startDate', 'endDate', 'startCity', 'endCity', 'status' ,'customer_id', 'agency_id', 'vehicle_id', 'driver_id'];
 
     public function customer()
     {

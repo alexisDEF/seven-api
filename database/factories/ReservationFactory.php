@@ -27,11 +27,11 @@ class ReservationFactory extends Factory
         return [
             'startDate'=>$startDate,
             'endDate'=>$this->faker->dateTimeBetween($startDate,'+30 days'),
-            'startCity'=>$this->faker->city,
-            'endCity'=>$this->faker->city,
+            'startAgency_id'=>$this->faker->numberBetween(1,10),
+            'endAgency_id'=>$this->faker->numberBetween(1,10),
+            'status' => random_int(0,1),
             'vehicle_id'=>$this->faker->numberBetween(1,10),
             'customer_id'=>$this->faker->numberBetween(1,10),
-            'agency_id'=>$this->faker->numberBetween(1,10),
             'driver_id'=>$this->faker->numberBetween(1,10),
         ];
     }

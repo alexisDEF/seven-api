@@ -14,7 +14,13 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        return Vehicle::all();
+        $vehicles = Vehicle::all();
+
+//        foreach($vehicles as $vehicles){
+//            $vehicles->
+//        }
+
+        return $vehicles;
     }
 
     /**
