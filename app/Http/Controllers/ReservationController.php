@@ -36,17 +36,21 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
+
+        $input = $request;
+
         return Reservation::create([
-            'startDate'=>'2022-02-03 00:00:00',
-            'endDate'=>'2022-02-03 00:00:00',
-            'startCity'=>1,
-            'endCity'=>1,
-            'customer_id'=>1,
-            'agency_id'=>1,
-            'vehicle_id'=>1,
-            'driver_id'=>1,
+            'startDate'=>$input['startDate'],
+            'endDate'=>$input['endDate'],
+            'startAgency_id'=>1,
+            'endAgency_id'=>1,
+            'status'=>0,
+            'customer_id'=>$input['customer_id'],
+            'vehicle_id'=>$input['selectVehicle'],
+            'driver_id'=>$input['selectDriver'],
         ]);
     }
+
 
 
     /**
