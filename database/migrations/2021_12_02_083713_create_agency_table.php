@@ -15,10 +15,11 @@ class CreateAgencyTable extends Migration
     {
         Schema::create('agencies', function (Blueprint $table) {
             $table->id();
+            $table->string('country');
             $table->string('city');
             $table->string('postCode');
             $table->string('address');
-            $table->timestamps();
+            $table->string('phoneNumber');
         });
     }
 

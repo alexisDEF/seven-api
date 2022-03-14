@@ -31,5 +31,11 @@ class VehicleStatusSeeder extends Seeder
                 'libelle'=>'Contrôlé au retrait'
             ]
         );
+
+        DB::table('vehicle_statuses')->insert(
+            [
+                'libelle'=>'Contrôlé à la restitution'
+            ]
+        );
     }
 }

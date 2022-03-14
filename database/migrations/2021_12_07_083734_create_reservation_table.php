@@ -21,7 +21,8 @@ class CreateReservationTable extends Migration
             $table->foreign('startAgency_id')->references('id')->on('agencies');
             $table->unsignedBigInteger('endAgency_id');
             $table->foreign('endAgency_id')->references('id')->on('agencies');
-            $table->boolean('status');
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('vehicle_statuses');
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->unsignedBigInteger('vehicle_id');
@@ -39,6 +40,6 @@ class CreateReservationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservation');
+        Schema::dropIfExists('reservations');
     }
 }

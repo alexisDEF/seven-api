@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DamageType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,16 +15,13 @@ class DamageTypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('damage_types')->insert([
-            'damage'=> 'Rayure superficielle'
-        ]);
-
-        DB::table('damage_types')->insert([
-            'damage'=> 'Rayure profonde'
-        ]);
-
-        DB::table('damage_types')->insert([
-            'damage'=>'Enfoncement/choc'
-        ]);
+        $RS = DamageType::create(['damage'=>'Rayure superficielle']);
+        $RP = DamageType::create(['damage'=>'Rayure profonde']);
+        $EC = DamageType::create(['damage'=>'Enfoncement/choc']);
+//        return [
+//            $RS,
+//            $RP,
+//            $EC
+//        ];
     }
 }

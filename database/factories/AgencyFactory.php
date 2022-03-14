@@ -21,10 +21,14 @@ class AgencyFactory extends Factory
      */
     public function definition()
     {
+
+
+
+
         return [
-            'city'=>$this->faker->city,
+            /**'city'=>$this->faker->city,
             'postCode'=>$this->faker->postcode,
-            'address'=>$this->faker->address,
+            'address'=>$this->faker->address,*/
         ];
     }
 }
