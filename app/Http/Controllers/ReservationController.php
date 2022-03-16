@@ -11,21 +11,21 @@ class ReservationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Reservation[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return Reservation::all();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Reservation[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return Reservation::all();
     }
 
     /**
@@ -44,7 +44,6 @@ class ReservationController extends Controller
             'endDate'=>$input['endDate'],
             'startAgency_id'=>1,
             'endAgency_id'=>1,
-            'status'=>0,
             'customer_id'=>$input['customer_id'],
             'vehicle_id'=>$input['selectVehicle'],
             'driver_id'=>$input['selectDriver'],

@@ -29,7 +29,7 @@ class ReservationFactory extends Factory
             'endDate'=>$this->faker->dateTimeBetween($startDate,'+30 days'),
             'startAgency_id'=>$this->faker->numberBetween(1,10),
             'endAgency_id'=>$this->faker->numberBetween(1,10),
-            'status_id' => $this->faker->numberBetween(1,4),
+            //'status_id' => $this->faker->numberBetween(1,4),
             'vehicle_id'=>$this->faker->numberBetween(1,10),
             'customer_id'=>$this->faker->numberBetween(1,10),
             'driver_id'=>$this->faker->numberBetween(1,10),

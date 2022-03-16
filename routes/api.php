@@ -29,6 +29,7 @@ Route::prefix('v1')->group(function() {
 
         Route::get('drivers/{compagnyId}',[\App\Http\Controllers\DriverController::class,'index']);
         Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
+        Route::get('reservation', [\App\Http\Controllers\ReservationController::class, 'index']);
         Route::get('vehicles', [\App\Http\Controllers\VehicleController::class, 'index']);
         Route::get('user', [\App\Http\Controllers\API\UserController::class, 'index']);
     });
