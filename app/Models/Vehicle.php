@@ -27,7 +27,7 @@ class Vehicle extends Model
 
     public function vehicleModel()
     {
-        return $this->belongsToMany(VehicleModel::class);
+        return $this->belongsTo(VehicleModel::class);
     }
 
     public function checkup()

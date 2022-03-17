@@ -36,17 +36,14 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-
-        $input = $request;
-
         return Reservation::create([
-            'startDate'=>$input['startDate'],
-            'endDate'=>$input['endDate'],
-            'startAgency_id'=>1,
-            'endAgency_id'=>1,
-            'customer_id'=>$input['customer_id'],
-            'vehicle_id'=>$input['selectVehicle'],
-            'driver_id'=>$input['selectDriver'],
+            'startDate'=>$request['startDate'],
+            'endDate'=>$request['endDate'],
+            'startAgency_id'=>$request['startAgency'],
+            'endAgency_id'=>$request['endAgency'],
+            'customer_id'=>$request['customer_id'],
+            'vehicle_id'=>$request['selectVehicle'],
+            'driver_id'=>$request['selectDriver'],
         ]);
     }
 
@@ -60,13 +57,8 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        $reservation = Reservation::where('id',$id)->with('customer','vehicle','driver')->get();
-//
-//        $reservation->customer_id = $reservation->customer;
-//        $reservation->vehicle_id = $reservation->vehicle;
-//        $reservation->driver_id = $reservation->driver;
 
-        return $reservation;
+        return Reservation::where('id',$id)->with('customer','vehicle','driver')->first();
     }
 
     /**

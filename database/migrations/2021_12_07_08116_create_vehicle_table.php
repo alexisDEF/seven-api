@@ -19,8 +19,8 @@ class CreateVehicleTable extends Migration
             $table->float('mileage');
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('vehicle_statuses');
-            $table->unsignedBigInteger('vehicleModel_id');
-            $table->foreign('vehicleModel_id')->references('id')->on('vehicle_models');
+            $table->unsignedBigInteger('vehicle_model_id');
+            $table->foreign('vehicle_model_id')->references('id')->on('vehicle_models');
         });
     }
 

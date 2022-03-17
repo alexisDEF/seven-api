@@ -19,6 +19,7 @@ class CreateVehicleModelsTable extends Migration
             $table->string('model');
             $table->integer('vehiclesAvailable');
             $table->integer('vehiclesUnavailable');
+            $table->string('logoBrandUrl');
         });
     }
 

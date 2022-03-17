@@ -20,7 +20,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(){
-        if(Auth::attempt(['email' => request('Email'), 'password' => request('Password')])){
+        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
 

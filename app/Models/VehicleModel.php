@@ -9,4 +9,9 @@ class VehicleModel extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function vehicles()
+    {
+        return $this->belongsToMany(Vehicle::class);
+    }
 }
