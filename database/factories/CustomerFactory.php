@@ -28,7 +28,7 @@ class CustomerFactory extends Factory
         return [
             'company_id'=>$this->faker->numberBetween(1,10),
             'agent_id'=>$this->faker->numberBetween(1,10),
-            'user_id'=>$this->faker->unique->numberBetween(1,15),
+            'user_id'=>$this->faker->unique->numberBetween(3,15),
         ];
     }
 }

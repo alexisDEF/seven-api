@@ -82,6 +82,10 @@ class DatabaseSeeder extends Seeder
         Vehicle::factory(10)->create();
         Reservation::factory(10)->create();
 
-
+        Customer::create([
+            'agent_id'=>1,
+            'company_id'=>4,
+            'user_id'=>2
+        ]);
     }
 }

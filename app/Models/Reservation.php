@@ -23,6 +23,18 @@ class Reservation extends Model
         return $this->belongsTo(Vehicle::class);
 
     }
+
+    public function agencyStart()
+    {
+        return $this->belongsTo(Agency::class,'startAgency_id');
+    }
+
+    public function agencyEnd()
+    {
+        return $this->belongsTo(Agency::class,'endAgency_id');
+    }
+
+
     public function driver()
     {
         return $this->belongsTo(Driver::class);

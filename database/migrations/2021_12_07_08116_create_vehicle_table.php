@@ -17,6 +17,7 @@ class CreateVehicleTable extends Migration
             $table->id();
             $table->string('licencePlate');
             $table->float('mileage');
+            $table->integer('nbSeat');
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('vehicle_statuses');
             $table->unsignedBigInteger('vehicle_model_id');

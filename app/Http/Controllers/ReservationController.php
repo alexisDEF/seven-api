@@ -58,7 +58,7 @@ class ReservationController extends Controller
     public function show($id)
     {
 
-        return Reservation::where('id',$id)->with('customer','vehicle','driver')->first();
+        return Reservation::where('id',$id)->with('customer','vehicle','driver','agencyStart','agencyEnd')->first();
     }
 
     /**
@@ -69,7 +69,7 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        $reservation->updateOrFail([''],[]);
     }
 
     /**
@@ -97,14 +97,14 @@ class ReservationController extends Controller
 
     public function getReservationsWithCustomerId($customerId){
 
-        $reservations = Reservation::where('customer_id',$customerId)->with('customer','vehicle','driver')->get();
-
-//        foreach($reservations as $reservation){
-//            $reservation->customer_id = $reservation->customer;
-//            $reservation->vehicle_id = $reservation->vehicle;
-//            $reservation->driver_id = $reservation->driver;
-//        }
-
+        $reservations = Reservation::where('customer_id',$customerId)->with('customer','vehicle','driver','agencyStart','agencyEnd')->get();
         return $reservations;
+    }
+
+    public function delete($id){
+
+        $booking = Reservation::where('id',$id);
+
+        return $booking->delete();
     }
 }
