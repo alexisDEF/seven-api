@@ -22,15 +22,15 @@ Route::prefix('v1')->group(function() {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('getRegisteredUser', 'API\UserController@getRegisteredUser');
 
-        Route::get('getReservationsWithCustomerId/{id}',[\App\Http\Controllers\ReservationController::class,'getReservationsWithCustomerId']);
-        Route::post('storereservation',[\App\Http\Controllers\ReservationController::class, 'store']);
-        Route::get('getOneReservation/{id}',[\App\Http\Controllers\ReservationController::class,'show']);
-        Route::get('deleteBooking/{id}',[\App\Http\Controllers\ReservationController::class,'delete']);
+        Route::get('getReservationsWithCustomerId/{id}',[\App\Http\Controllers\BookingController::class,'getReservationsWithCustomerId']);
+        Route::post('storereservation',[\App\Http\Controllers\BookingController::class, 'store']);
+        Route::get('getOneReservation/{id}',[\App\Http\Controllers\BookingController::class,'show']);
+        Route::get('deleteBooking/{id}',[\App\Http\Controllers\BookingController::class,'delete']);
 
 
         Route::get('drivers/{compagnyId}',[\App\Http\Controllers\DriverController::class,'index']);
         Route::get('agency', [\App\Http\Controllers\AgencyController::class, 'index']);
-        Route::get('reservation', [\App\Http\Controllers\ReservationController::class, 'index']);
+        Route::get('reservation', [\App\Http\Controllers\BookingController::class, 'index']);
         Route::get('vehicles', [\App\Http\Controllers\VehicleController::class, 'index']);
         Route::get('user', [\App\Http\Controllers\API\UserController::class, 'index']);
     });

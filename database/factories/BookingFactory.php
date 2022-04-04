@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Reservation;
+use App\Models\Booking;
 use App\Models\Vehicle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ReservationFactory extends Factory
+class BookingFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Reservation::class;
+    protected $model = Booking::class;
 
     /**
      * Define the model's default state.

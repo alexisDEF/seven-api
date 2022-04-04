@@ -22,7 +22,7 @@ class Vehicle extends Model
 
     public function reservation()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Booking::class);
     }
 
     public function vehicleModel()

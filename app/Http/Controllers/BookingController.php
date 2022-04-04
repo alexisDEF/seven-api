@@ -3,29 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
-use App\Models\Reservation;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
-class ReservationController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Reservation[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
+     * @return Booking[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function index()
     {
-        return Reservation::all();
+        return Booking::all();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Reservation[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
+     * @return Booking[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function create()
     {
-        return Reservation::all();
+        return Booking::all();
     }
 
     /**
@@ -36,7 +36,7 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        return Reservation::create([
+        return Booking::create([
             'startDate'=>$request['startDate'],
             'endDate'=>$request['endDate'],
             'startAgency_id'=>$request['startAgency'],
@@ -52,22 +52,22 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $reservation
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
 
-        return Reservation::where('id',$id)->with('customer','vehicle','driver','agencyStart','agencyEnd')->first();
+        return Booking::where('id',$id)->with('customer','vehicle','driver','agencyStart','agencyEnd')->first();
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+    public function edit(Booking $reservation)
     {
         $reservation->updateOrFail([''],[]);
     }
@@ -76,10 +76,10 @@ class ReservationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function update(Request $request, Booking $reservation)
     {
         //
     }
@@ -87,23 +87,23 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy(Booking $reservation)
     {
         //
     }
 
     public function getReservationsWithCustomerId($customerId){
 
-        $reservations = Reservation::where('customer_id',$customerId)->with('customer','vehicle','driver','agencyStart','agencyEnd')->get();
+        $reservations = Booking::where('customer_id',$customerId)->with('customer','vehicle','driver','agencyStart','agencyEnd')->get();
         return $reservations;
     }
 
     public function delete($id){
 
-        $booking = Reservation::where('id',$id);
+        $booking = Booking::where('id',$id);
 
         return $booking->delete();
     }

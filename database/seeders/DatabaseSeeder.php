@@ -9,7 +9,7 @@ use App\Models\Company;
 use App\Models\Customer;
 use App\Models\DamageType;
 use App\Models\Driver;
-use App\Models\Reservation;
+use App\Models\Booking;
 use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\VehicleCheck;
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
          VehicleCheck::factory(10)->create();
         VehicleModel::factory(1)->create();
         Vehicle::factory(10)->create();
-        Reservation::factory(10)->create();
+        Booking::factory(10)->create();
 
         Customer::create([
             'agent_id'=>1,
