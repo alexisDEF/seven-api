@@ -26,6 +26,7 @@ Route::prefix('v1')->group(function() {
         Route::post('storereservation',[\App\Http\Controllers\BookingController::class, 'store']);
         Route::get('getOneReservation/{id}',[\App\Http\Controllers\BookingController::class,'show']);
         Route::get('deleteBooking/{id}',[\App\Http\Controllers\BookingController::class,'delete']);
+        Route::post('updateBooking/{id}',[\App\Http\Controllers\BookingController::class,'update']);
 
 
         Route::get('drivers/{compagnyId}',[\App\Http\Controllers\DriverController::class,'index']);

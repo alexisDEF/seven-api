@@ -79,9 +79,10 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $reservation)
+    public function update(Request $request,$id)
     {
-        //
+
+        Booking::where('id',$id)->update($request->all());
     }
 
     /**
