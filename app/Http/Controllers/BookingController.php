@@ -69,7 +69,6 @@ class BookingController extends Controller
      */
     public function edit(Booking $reservation)
     {
-        $reservation->updateOrFail([''],[]);
     }
 
     /**
@@ -81,7 +80,6 @@ class BookingController extends Controller
      */
     public function update(Request $request,$id)
     {
-
         Booking::where('id',$id)->update($request->all());
     }
 
